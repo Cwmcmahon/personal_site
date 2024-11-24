@@ -24,7 +24,7 @@ if blog.length != 0
     doc = Asciidoctor.load_file src, safe: :unsafe
     title = doc.title
     date = Pathname.new(src).mtime.strftime("%B %d, %Y")
-    b_index << "== xref:#{src.basename}[#{title}] (${date})\n\n"
+    b_index << "== xref:#{src.basename}[#{title}] (#{date})\n\n"
   }
   Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: 'site-env=true docinfo=shared-header docinfodir=common'
 end
