@@ -1,13 +1,15 @@
 require 'asciidoctor'
 require 'pathname'
 
+generate_all = (ARGV.length == 1 && ARGV[0] == '-a')
+
 blog = []
 commonplace = []
 
 Pathname.glob("src{/,/*/}*.adoc") {|src_name|
   doc = Asciidoctor.load_file src_name, safe: :unsafe
   out_name = src_name.sub('src/', 'out/').sub_ext('.html')
-  if !doc.attributes.fetch('exclude', false) && (!out_name.exist? || out_name.mtime < src_name.mtime)
+  if !doc.attributes.fetch('exclude', false) && (!out_name.exist? || out_name.mtime < src_name.mtime || generate_all)
     Asciidoctor.convert_file src_name, to_file: "#{out_name}", mkdirs: true, base_dir: '.', safe: :unsafe, attributes: 'site-env=true docinfo=shared-header docinfodir=common'
     puts out_name
     if out_name.dirname.basename.to_s == "blog"
