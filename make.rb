@@ -3,7 +3,7 @@ require 'pathname'
 
 generate_all = (ARGV.length == 1 && ARGV[0] == '-a')
 
-attributes = 'site-env=true docinfo=shared-header docinfodir=common nofooter'
+attributes = 'site-env=true docinfo=shared-header docinfodir=common nofooter stylesheet=styles/custom.css'
 blog = []
 commonplace = []
 
