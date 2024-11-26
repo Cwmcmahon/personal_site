@@ -151,7 +151,8 @@ blockquote footer {
 }
 
 ol, ul {
-  width: 45%;
+  width: 57.5%; 
+  -webkit-padding-start: 5%;
 }
 
 figure {
@@ -160,7 +161,7 @@ figure {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  max-width: 55%;
+  max-width: 62.5%;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin: 0 0 3em 0;
@@ -183,6 +184,13 @@ figure.fullwidth figcaption { margin-right: 24%; }
 
 video {
   max-width: 100%;
+}
+
+a:link,
+a:visited {
+    color: inherit;
+    text-underline-offset: 0.1em;
+    text-decoration-thickness: 0.05em;
 }
 
 /* Sidenotes, margin notes, figures, captions */
@@ -261,6 +269,7 @@ div.table-wrapper {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1.125rem;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 
 h1 .code, h2 .code, h3 .code { font-size: 0.80em; }
@@ -271,6 +280,7 @@ pre.code {
   width: 52.5%;
   padding-left: 2.5%;
   overflow-x: auto;
+  -webkit-text-size-adjust: 100%;
 }
 
 .fullwidth {
