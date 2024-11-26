@@ -24,19 +24,19 @@ Pathname.glob("src{/,/*/}*.adoc") {|src_name|
 }
 
 # Blog index
-b_index = "= Blog Posts\n:toc:\n\n"
+b_index = "= Blog Posts\n\n"
 
 blog.sort_by(&:ctime).reverse.each {|src|
   doc = Asciidoctor.load_file src, safe: :unsafe
   title = doc.title
   date = Pathname.new(src).ctime.strftime("%B %d, %Y")
-  b_index << "== xref:#{src.basename}[#{title}] (#{date})\n\n"
+  b_index << "== xref:#{src.basename}[#{title} (#{date})]\n\n"
 }
 
 Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
 
 # Commonplace Index
-c_index = "= Commonplace Entries\n:toc:\n\n"
+c_index = "= Commonplace Entries\n\n"
 
 commonplace.sort.each {|src|
   doc = Asciidoctor.load_file src, safe: :unsafe
