@@ -32,7 +32,7 @@ blog.sort_by(&:last).reverse.to_h.each_pair {|file, date|
   date = date.strftime("%B %d, %Y")
   doc = Asciidoctor.load_file file, safe: :unsafe
   title = doc.title
-  b_index << "== xref:#{file.basename}[#{title} (#{date})]\n\n"
+  b_index << "[discrete]\n=== xref:#{file.basename}[#{title} (#{date})]\n\n"
 }
 
 Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
@@ -43,7 +43,7 @@ c_index = "= Commonplace Entries\n\n"
 commonplace.sort.each {|src|
   doc = Asciidoctor.load_file src, safe: :unsafe
   title = doc.title
-  c_index << "== xref:#{src.basename}[#{title}]\n\n"
+  c_index << "[discrete]\n=== xref:#{src.basename}[#{title}]\n\n"
 }
 
 Asciidoctor.convert c_index, standalone: true, to_file: "out/commonplace/index.html", safe: :unsafe, attributes: attributes
