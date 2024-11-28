@@ -38,12 +38,32 @@ blog.sort_by(&:last).reverse.to_h.each_pair {|file, date|
 Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
 
 # Commonplace Index
-c_index = "= Commonplace Entries\n\n"
+c_index = "= Commonplace\n\n"
+cats_txt = "== Categories\n\n"
+ents_txt = "== Entries\n\n"
+cat_hash = Hash.new { |h,k| h[k] = [] }
 
 commonplace.sort.each {|src|
   doc = Asciidoctor.load_file src, safe: :unsafe
   title = doc.title
-  c_index << "[discrete]\n=== xref:#{src.basename}[#{title}]\n\n"
+  categories = doc.attributes.fetch('categories', '').gsub(' ', '').split(',')
+  categories.each {|cat|
+    cat_hash[cat] << src
+  }
+  ents_txt << "=== xref:#{src.basename}[#{title}]\n\n"
 }
+
+cat_hash.sort.to_h.each_pair {|name, arr|
+  name_index = "= Commonplace Entries: #{name.capitalize}\n\n"
+  arr.each {|src|
+    doc = Asciidoctor.load_file src, safe: :unsafe
+  	title = doc.title
+  	name_index << "[discrete]\n=== xref:#{src.basename}[#{title}]\n\n"
+  }
+  Asciidoctor.convert name_index, standalone: true, to_file: "out/commonplace/#{name}.html", safe: :unsafe, attributes: attributes
+  cats_txt << "=== xref:#{name}.adoc[#{name.capitalize}]\n\n"
+}
+
+c_index << cats_txt + ents_txt
 
 Asciidoctor.convert c_index, standalone: true, to_file: "out/commonplace/index.html", safe: :unsafe, attributes: attributes
