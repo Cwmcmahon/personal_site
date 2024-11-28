@@ -50,7 +50,7 @@ commonplace.sort.each {|src|
   categories.each {|cat|
     cat_hash[cat] << src
   }
-  ents_txt << "=== xref:#{src.basename}[#{title}]\n.Click for full quote\n[%collapsible]\n====\ninclude::#{src}[lines=4..-1]\n====\n\n"
+  ents_txt << "=== #{title}\n.Click for full quote\n[%collapsible]\n====\ninclude::#{src}[lines=4..-1]\n====\n\n"
 }
 
 cat_hash.sort.to_h.each_pair {|name, arr|
@@ -58,7 +58,7 @@ cat_hash.sort.to_h.each_pair {|name, arr|
   arr.each {|src|
     doc = Asciidoctor.load_file src, safe: :unsafe
   	title = doc.title
-  	name_index << "[discrete]\n=== xref:#{src.basename}[#{title}]\n.Click for full quote\n[%collapsible]\n====\ninclude::#{src}[lines=4..-1]\n====\n\n"
+  	name_index << "[discrete]\n=== #{title}\n.Click for full quote\n[%collapsible]\n====\ninclude::#{src}[lines=4..-1]\n====\n\n"
   }
   Asciidoctor.convert name_index, standalone: true, to_file: "out/commonplace/#{name}.html", safe: :unsafe, attributes: attributes
   cats_txt << "=== xref:#{name}.adoc[#{name.capitalize}]\n\n"
