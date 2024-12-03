@@ -42,6 +42,7 @@ c_index = "= Commonplace\n\n"
 cats_txt = "== Categories\n\n"
 ents_txt = "== Entries\n\n"
 last_txt = "== What is this?\n\nIt's my Commonplace page, inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books]. I use it as a place to gather quotes that I like!"
+
 cat_hash = Hash.new { |h,k| h[k] = [] }
 
 commonplace.sort.each {|src|
@@ -65,6 +66,6 @@ cat_hash.sort.to_h.each_pair {|name, arr|
   cats_txt << "=== xref:#{name}.adoc[#{name.capitalize}]\n\n"
 }
 
-c_index << cats_txt + ents_txt
+c_index << cats_txt + ents_txt + last_txt
 
 Asciidoctor.convert c_index, standalone: true, to_file: "out/commonplace/index.html", safe: :unsafe, attributes: attributes
