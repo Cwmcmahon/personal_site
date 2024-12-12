@@ -37,6 +37,9 @@ html {
 
 body {
   width: 87.5%;
+  min-height: 98vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
   margin-left: auto;
   margin-right: auto;
   padding-left: auto;
@@ -44,7 +47,8 @@ body {
   background-color: #fffff8;
   color: #111;
   max-width: 1400px;
-  counter-reset: sidenote-counter; }
+  counter-reset: sidenote-counter; 
+}
 
 nav {
   border: medium double #111111; 
@@ -57,18 +61,22 @@ nav a {
   font-size: 1.2rem;
 }
 
-h1 { font-weight: 400;
-     margin-top: 2.25rem;
-     margin-bottom: 1.5rem;
-     font-size: 3rem;
-     line-height: 1; }
+h1 { 
+  font-weight: 400;
+  margin-top: 2.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  line-height: 1; 
+}
 
-h2 { font-style: italic;
-     font-weight: 400;
-     margin-top: 2.1rem;
-     margin-bottom: 0;
-     font-size: 2rem;
-     line-height: 1; }
+h2 { 
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  font-size: 2rem;
+  line-height: 1; 
+}
 
 h3 {
   font-style: italic;
@@ -126,6 +134,26 @@ p {
   margin-bottom: 1.4rem;
   padding-right: 0;
   vertical-align: baseline;
+}
+
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+  border: medium double #111111; 
+  text-align: center;
+}
+
+.footer p {
+  line-height: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
 /* Chapter Epigraphs */
