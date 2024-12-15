@@ -41,7 +41,7 @@ Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", s
 c_index = "= Commonplace\n\n"
 cats_txt = "== Categories\n\n"
 ents_txt = "== Entries\n\n"
-last_txt = "== What is this?\n\nIt's my Commonplace page, inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books]. I use it as a place to gather quotes that I like!"
+last_txt = "== What is this?\n\nIt's my _Commonplace_ page, inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books]. I use it as a place to gather quotes that I like!"
 
 cat_hash = Hash.new { |h,k| h[k] = [] }
 
