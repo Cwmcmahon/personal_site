@@ -4,7 +4,7 @@ require 'date'
 
 generate_all = (ARGV.length == 1 && ARGV[0] == '-a')
 
-attributes = 'site-env=true docinfo=shared-header,shared-footer docinfodir=common stylesheet=styles/custom.css nofooter'
+attributes = 'site-env=true docinfo=shared-header,shared-footer docinfodir=common stylesheet=styles/custom.css title=cartermcm.net favicon=/favicon.ico nofooter'
 blog = {}
 commonplace = []
 
