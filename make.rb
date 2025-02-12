@@ -1,17 +1,20 @@
 require 'asciidoctor'
 require 'pathname'
 require 'date'
+require 'set'
 
 generate_all = (ARGV.length == 1 && ARGV[0] == '-a')
 
 attributes = 'site-env=true docinfo=shared-header,shared-footer docinfodir=common stylesheet=styles/custom.css title=cartermcm.net favicon=/favicon.ico nofooter'
 blog = {}
 commonplace = []
+pages = Set[]
 
 Pathname.glob("src{/,/*/}*.adoc") {|src_name|
   doc = Asciidoctor.load_file src_name, safe: :unsafe
   out_name = src_name.sub('src/', 'out/').sub_ext('.html')
   if !doc.attributes.fetch('exclude', false)
+    pages << out_name
     if out_name.dirname.basename.to_s == "blog"
       date = Date.parse(doc.attributes.fetch('date', Date.today.to_s))
       blog.store(src_name, date)
@@ -26,19 +29,19 @@ Pathname.glob("src{/,/*/}*.adoc") {|src_name|
 }
 
 # Blog index
-b_index = "= Blog Posts\n\n"
+blog_index = "= Blog Posts\n\n"
 
 blog.sort_by(&:last).reverse.to_h.each_pair {|file, date|
   date = date.strftime("%B %d, %Y")
   doc = Asciidoctor.load_file file, safe: :unsafe
   title = doc.title
-  b_index << "[discrete]\n=== xref:#{file.basename}[#{title} (#{date})]\n\n"
+  blog_index << "[discrete]\n=== xref:#{file.basename}[#{title} (#{date})]\n\n"
 }
 
-Asciidoctor.convert b_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
+Asciidoctor.convert blog_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
 
 # Commonplace Index
-c_index = "= Commonplace\n\n"
+comm_index = "= Commonplace\n\n"
 cats_txt = "== Categories\n\n"
 ents_txt = "== Entries\n\n"
 last_txt = "== What is this?\n\nIt's my _Commonplace_ page, inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books]. I use it as a place to gather quotes that I like!"
@@ -66,6 +69,13 @@ cat_hash.sort.to_h.each_pair {|name, arr|
   cats_txt << "=== xref:#{name}.adoc[#{name.capitalize}]\n\n"
 }
 
-c_index << cats_txt + ents_txt + last_txt
+comm_index << cats_txt + ents_txt + last_txt
 
-Asciidoctor.convert c_index, standalone: true, to_file: "out/commonplace/index.html", safe: :unsafe, attributes: attributes
+Asciidoctor.convert comm_index, standalone: true, to_file: "out/commonplace/index.html", safe: :unsafe, attributes: attributes
+
+# Remove pages that no longer have a source file
+Pathname.glob("out{/,/*/}*.html") {|page_path|
+  if (page_path.basename.to_s != "index.html") && !(pages === page_path) 
+    page_path.delete()
+  end
+}
