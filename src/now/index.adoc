@@ -1,0 +1,13 @@
+= Now
+
+Athena and I got married on November 2, 2024! It was a wonderful day, and it was followed by a wonderful week in Rome for our honeymoon.
+
+We're still living in Downtown Portland, and I started working as a Customer Success Engineer at Hydrolix in January.
+
+I've also been getting back into the habit of reading more!
+Mickey7 is my current book.
+
+== What is this?
+
+It's a _Now_ page, based on https://nownownow.com/about[this idea] from https://sive.rs[Derek Sivers]. A description he uses that I found helpful is, "what you’d tell a friend you hadn’t seen in a year."
+

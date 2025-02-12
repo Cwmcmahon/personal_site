@@ -14,7 +14,7 @@ Pathname.glob("src{/,/*/}*.adoc") {|src_name|
   doc = Asciidoctor.load_file src_name, safe: :unsafe
   out_name = src_name.sub('src/', 'out/').sub_ext('.html')
   if !doc.attributes.fetch('exclude', false)
-    pages << out_name
+    pages << out_name.to_s
     if out_name.dirname.basename.to_s == "blog"
       date = Date.parse(doc.attributes.fetch('date', Date.today.to_s))
       blog.store(src_name, date)
@@ -65,8 +65,10 @@ cat_hash.sort.to_h.each_pair {|name, arr|
   	title = doc.title
   	name_index << "[discrete]\n=== #{title}\n.Click for full quote\n[%collapsible]\n====\ninclude::#{src}[lines=4..-1]\n====\n\n"
   }
-  Asciidoctor.convert name_index, standalone: true, to_file: "out/commonplace/#{name}.html", safe: :unsafe, attributes: attributes
+  cat_file = "out/commonplace/#{name}.html"
+  Asciidoctor.convert name_index, standalone: true, to_file: cat_file, safe: :unsafe, attributes: attributes
   cats_txt << "=== xref:#{name}.adoc[#{name.capitalize}]\n\n"
+  pages << cat_file
 }
 
 comm_index << cats_txt + ents_txt + last_txt
@@ -75,7 +77,7 @@ Asciidoctor.convert comm_index, standalone: true, to_file: "out/commonplace/inde
 
 # Remove pages that no longer have a source file
 Pathname.glob("out{/,/*/}*.html") {|page_path|
-  if (page_path.basename.to_s != "index.html") && !(pages === page_path) 
+  if (page_path.basename.to_s != "index.html") && !(pages === page_path.to_s) 
     page_path.delete()
   end
 }

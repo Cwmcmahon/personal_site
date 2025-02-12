@@ -1,0 +1,28 @@
+= Expanding on My Interests
+:date: 2024-12-31
+
+Last updated on February 4, 2025
+
+== 3D printing
+
+I don't have a 3D printer, but I want one! I love the idea of making my own replacement parts and original gadgets. Cyberdecks are particularly fascinating!
+
+== Board games
+
+My favorite board games right now are https://restorationgames.com/unmatched/[_Unmatched_], https://nullsignal.games/[_Netrunner_], and https://www.alderac.com/war-chest/[_War Chest_], all of which my wife and I play frequently.
+
+== Hiking
+
+I'm currently looking into options for getting to hiking spots without a car because I'd really like to do that more.
+
+== Reading
+
+I used to read all the time, and I'm getting back into it! Sci-fi is what I'm most interested in right now, and I loved reading Ted Chiang's short story collections in 2024.
+
+== Self-hosting
+
+I have a home server running Ubuntu, which I use to self-host services like Immich for photos, Jellyfin for streaming, and Miniflux for RSS. I use Tailscale to access it from anywhere.
+
+== Video games
+
+I play on the Steam Deck and Switch, mostly indie games (often action or card-based roguelikes) and big Nintendo titles (Mario Kart, Smash Bros, LoZ).

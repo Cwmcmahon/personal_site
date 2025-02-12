@@ -1,0 +1,8 @@
+= About This Website
+ifndef::site-env[:relfilesuffix: .adoc]
+
+xref:../now/index.adoc[_Now_] describes what I'm currently focused on, and it's based on https://nownownow.com/about[this idea] from https://sive.rs[Derek Sivers]. 
+
+xref:../commonplace/index.adoc[_Commonplace_] is where I gather quotes that I like, and it's inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books].
+
+This website is open source, so feel free to take a look at the https://github.com/Cwmcmahon/personal_site/tree/main[repo on GitHub]! I wrote a (bad) ruby script that generates the html files from https://asciidoc.org/[asciidoc] files using https://asciidoctor.org/[Asciidoctor].

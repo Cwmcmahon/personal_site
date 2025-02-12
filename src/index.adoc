@@ -1,1 +1,17 @@
-../../adoc_notes/index.adoc
+= Welcome!
+ifndef::site-env[:relfilesuffix: .adoc]
+
+My name is Carter McMahon, and I go by Cartoon Macaroni or cartoonmac in a lot of online spaces.
+
+This is my website! It'll always be a work-in-progress, and I'll update it whenever I think it needs updating. xref:about/index.adoc[_About_] has more information about this website and its pages.
+
+Here's an alphabetical list of some of my interests:
+
+* 3D printing
+* Board games
+* Hiking
+* Reading
+* Self-hosting
+* Video games
+
+I expand a bit on these in xref:blog/expanding_on_my_interests.adoc[this blog post]!
