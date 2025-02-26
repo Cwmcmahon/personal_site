@@ -1,7 +1,7 @@
 = Nothing Erases the Past
 :categories: philosophy
 
-[quote,Ted Chiang,"The Merchant and the Alchemist's Gate" (page 35)]
+[quote,Ted Chiang,The Merchant and the Alchemist's Gate (page 35)]
 ____
 Nothing erases the past. There is repentance, there is atonement, and there is forgiveness. That is all, but it is enough.
 ____
