@@ -1,0 +1,6 @@
+= Blog Post Title
+:date: YYYY-MM-DD
+
+== Section Header
+
+Body

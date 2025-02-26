@@ -1,0 +1,7 @@
+= Commonplace Entry Title
+:categories: category1, category2
+
+[,Author,Source]
+____
+Quote
+____
