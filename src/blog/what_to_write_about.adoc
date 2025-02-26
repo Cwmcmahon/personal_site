@@ -7,7 +7,7 @@ The first is a lack of specific ideas; a blog post can be about anything, and it
 
 Both of those obstacles can be mitigated with experience, but I'm having trouble getting the ball rolling. Maybe writing some ideas down in this blog post will help? I'm not sure, but it's worth a try.
 
-* Going through my home server setup
+* Going over my home server setup
 * Reviewing each story from Ted Chiang's two collections
 * Showing off my Unmatched stats dashboard
 * Sharing my thoughts on tech companies, Musk, and DOGE
