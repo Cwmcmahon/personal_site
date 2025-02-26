@@ -14,4 +14,4 @@ Here's an alphabetical list of some of my interests:
 * Self-hosting
 * Video games
 
-I expand a bit on these in xref:blog/expanding_on_my_interests.adoc[this blog post]!
+I expand a bit on these on my xref:now/index.adoc[_Now_] page!

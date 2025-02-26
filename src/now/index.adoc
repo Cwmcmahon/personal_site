@@ -1,11 +1,32 @@
 = Now
 
-Athena and I got married on November 2, 2024! It was a wonderful day, and it was followed by a wonderful week in Rome for our honeymoon.
+== What's going on
 
-We're still living in Downtown Portland, and I started working as a Customer Success Engineer at Hydrolix in January.
+Athena and I got married on November 2, 2024! It was a wonderful day, and it was followed by more wonderful days in Rome for our honeymoon.
 
-I've also been getting back into the habit of reading more!
-Mickey7 is my current book.
+We're still living in Downtown Portland, and I've been working as a Customer Success Engineer at Hydrolix since the start of the year.
+
+Hobbies and interests below!
+
+=== Making
+
+I like working on my home server, which is an old NUC running Ubuntu Server. I use it to self-host services like https://immich.app/[Immich] for photos, https://jellyfin.org/[Jellyfin] for streaming, and https://miniflux.app/[Miniflux] for RSS. https://tailscale.com/[Tailscale] makes it so I can access those services anywhere.
+
+I also want to get a 3D printer because I love the idea of making my own replacement parts and original gadgets. 
+
+=== Outdoorsing
+
+Athena and I are hoping to start volunteering with https://trailkeepersoforegon.org/[Trail Keepers of Oregon] soon because they do great work, it sounds fun, and they encourage carpooling!
+
+=== Playing
+
+My favorite board games right now are https://nullsignal.games/[_Netrunner_], https://restorationgames.com/unmatched/[_Unmatched_], and https://www.alderac.com/war-chest/[_War Chest_], all of Athena and I play frequently.
+
+For videogames I've been playing Tears of the Kingdom again, and I'm really looking forward to both Slay the Spire 2 and Hades 2.
+
+=== Reading
+
+I used to read all the time, and I'm getting back into it! Sci-fi is what I'm most interested in right now, and my current book is https://bookshop.org/p/books/antimatter-blues-a-mickey7-novel-edward-ashton/18410922[Antimatter Blues] by Edward Ashton. Before that I read https://bookshop.org/p/books/mickey7-edward-ashton/16721659?ean=9781250875280&next=t&next=t[Mickey7].
 
 == What is this?
 
