@@ -1,7 +1,7 @@
 = Do Philosophy Well
 :categories: philosophy
 
-[,Sean Carroll, Mindscape Podcast (episode 281)]
+[quote,Sean Carroll, Mindscape Podcast (episode 281)]
 ____
 You can't help but do philosophy. You can only do it well or do it badly.
 ____
