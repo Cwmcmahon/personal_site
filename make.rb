@@ -41,7 +41,7 @@ blog.sort_by(&:last).reverse.to_h.each_pair {|file, date|
 Asciidoctor.convert blog_index, standalone: true, to_file: "out/blog/index.html", safe: :unsafe, attributes: attributes
 
 # Commonplace Index
-comm_index = "= Commonplace Page\n\n"
+comm_index = "= Commonplace\n\n"
 cats_txt = "== Categories\n\n"
 ents_txt = "== Entries\n\n"
 last_txt = "== What is this?\n\nIt's my _Commonplace_ page, inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books]. I use it as a place to gather quotes that I like!"

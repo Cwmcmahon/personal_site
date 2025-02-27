@@ -1,9 +1,9 @@
-= About This Website
+= About This Site
 ifndef::site-env[:relfilesuffix: .adoc]
 
 == Pages
 
-xref:../blog/index.adoc[_Blog_] is, unsurprisingly, my blog. I'm not sure what I'll write about or how often I'll write at all, but that page is where my blog posts go.
+xref:../blog/index.adoc[_Blog_] is, unsurprisingly, my blog. I'm not sure how often I'll write posts for it, but that's where they will go.
 
 xref:../commonplace/index.adoc[_Commonplace_] is where I gather quotes that I like, and it's inspired by https://en.wikipedia.org/wiki/Commonplace_book[commonplace books].
 
